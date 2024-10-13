@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LOPIA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVIA Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            position: relative;
+            font-size: 5rem;
+            color: #ff0066;
+            font-weight: bold;
+        }
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            animation: fall 5s infinite;
+            opacity: 0;
+        }
+        .heart::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(135deg, #ff5f6d, #ffc371);
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 25% 100%, 0% 35%);
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .heart:nth-child(1) {
+            left: 15%;
+            animation-delay: 1s;
+        }
+        .heart:nth-child(2) {
+            left: 35%;
+            animation-delay: 3s;
+        }
+        .heart:nth-child(3) {
+            left: 55%;
+            animation-delay: 5s;
+        }
+        .heart:nth-child(4) {
+            left: 75%;
+            animation-delay: 7s;
+        }
+        .heart:nth-child(5) {
+            left: 85%;
+            animation-delay: 9s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        LOVIA
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+</body>
+</html>
